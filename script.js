@@ -21,7 +21,7 @@ const CHEAT_REVEAL_ALL = true;
 const ROWS_COUNT = 10;
 const COLS_COUNT = 10;
 
-const BOMBS_COUNT = 3;
+const BOMBS_COUNT = 10;
 
 
 var defeat = false;
@@ -45,14 +45,25 @@ for (var row = 0; row < ROWS_COUNT; row++) {
 
 //
 // TODO: Task 1 - add some bombs at fixed positions.
-cells[0][1].isBomb = true;
-cells[5][4].isBomb = true;
-cells[9][9].isBomb = true;
+// cells[0][1].isBomb = true;
+// cells[5][4].isBomb = true;
+// cells[9][9].isBomb = true;
 
-cells[7][1].isBomb = true;
-cells[8][2].isBomb = true;
-cells[9][2].isBomb = true;
+// cells[7][1].isBomb = true;
+// cells[8][2].isBomb = true;
+// cells[9][2].isBomb = true;
 
+function generateRandomIntegerInRange(min, max) {
+  return Math.floor(Math.random() * (9 - 0 + 1)) + 0;
+}
+
+for(let x = 0; x < BOMBS_COUNT; x++){
+  let x = generateRandomIntegerInRange();
+  let y = generateRandomIntegerInRange();
+  
+  cells[x][y].isBomb = true;
+  console.log(cells[x][y].toString());
+}
 
 
 //
